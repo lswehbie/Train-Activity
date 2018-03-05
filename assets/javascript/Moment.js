@@ -60,16 +60,16 @@ database.ref().on(
 	"child_added",
 	function(snapshot) {
 		var snap = snapshot.val();
-		console.log(snap.name);
-		console.log(snap.location);
-		console.log(hours);
-		console.log(snap.goods);
+		console.log(snap.trainName);
+		console.log(snap.destination);
+		console.log(firstTrainTime);
+		console.log(snap.frequency);
 		// console.log(nextArrival);
 		// console.log(snap.minutesAway);
-		$("#trainName-display").text(snap.name);
-		$("#destination-display").text(snap.location);
-		$("#firstTrainTime-display").text(snap.hours);
-		$("#frequency-display").text(snap.goods);
+		$("#trainName-display").text(snap.trainName);
+		$("#destination-display").text(snap.destination);
+		$("#firstTrainTime-display").text(snap.firstTrainTime);
+		$("#frequency-display").text(snap.frequency);
 
 		var tBody = $("#dataTable");
 		var tRow = $("<tr>");
