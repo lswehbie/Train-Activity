@@ -72,15 +72,19 @@ database.ref().on(
 
 		var tBody = $("#dataTable");
 		var tRow = $("<tr>");
-		var nameTd = $("<td>").text(snap.name);
-		var destinationTd = $("<td>").text(snap.location);
-		var trainTimeTd = $("<td>").text(snap.hours);
-		var frequencyTd = $("<td>").text(snap.goods);
+		var nameTd = $("<td>").text(snap.trainName);
+		var destinationTd = $("<td>").text(snap.destination);
+		var trainTimeTd = $("<td>").text(snap.firstTrainTime);
+		var frequencyTd = $("<td>").text(snap.frequency);
 
 		// Append the newly created table data to the table row
-		tRow.append(nameTd, locationTd, hoursTd, goodsTd);
+		tRow.append(nameTd, destinationTd, firstTrainTimeTd, frequencyTd);
 		// Append the table row to the table body
 		tBody.append(tRow);
+
+		$("#train-table > tbody").append("<tr><td>" + trainName + "</td><td>" + destination + "</td><td>" + firstTrainTime + "</td><td>" + frequency + "</td></tr>");
+
+
 	},
 	function(errorObject) {
 		console.log("Errors handled: " + errorObject.code);
