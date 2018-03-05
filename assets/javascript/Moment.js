@@ -29,25 +29,25 @@ var TIMESTAMP;
 // var minutesAway;
 $("#submit").on("click", function() {
 	event.preventDefault();
-	trainName = $("#trainName")
+	trainName = $("#trainName-input")
 		.val()
 		.trim();
-	destination = $("#destination")
+	destination = $("#destination-input")
 		.val()
 		.trim();
-	firstTrainTime = $("#firstTrainTime")
+	firstTrainTime = $("#firstTrainTime-input")
 		.val()
 		.trim();
-	frequency = $("#frequency")
+	frequency = $("#frequency-input")
 		.val()
 		.trim();
 	// nextArrival = $("#nextArrival").val().trim();
 	// minutesAway = $("#minutesAway").val().trim();
 	// Clears the form after pressing submit
-	$("#trainName").val("");
-	$("#destination").val("");
-	$("#firstTrainTime").val("");
-	$("#frequency").val("");
+	$("#trainName-input").val("");
+	$("#destination-input").val("");
+	$("#firstTrainTime-input").val("");
+	$("#frequency-input").val("");
 	database.ref().push({
 		trainName: trainName,
 		destination: destination,
