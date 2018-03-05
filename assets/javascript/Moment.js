@@ -24,6 +24,7 @@ var trainName = "";
 var destination = "";
 var firstTrainTime;
 var frequency;
+var TIMESTAMP;
 // var nextArrival;
 // var minutesAway;
 $("#submit").on("click", function() {
@@ -78,7 +79,7 @@ database.ref().on(
 		var frequencyTd = $("<td>").text(snap.frequency);
 
 		// Append the newly created table data to the table row
-		tRow.append(nameTd, destinationTd, firstTrainTimeTd, frequencyTd);
+		tRow.append(trainNameTd, destinationTd, firstTrainTimeTd, frequencyTd);
 		// Append the table row to the table body
 		tBody.append(tRow);
 
