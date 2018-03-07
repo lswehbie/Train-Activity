@@ -98,17 +98,17 @@ database.ref().on("child_added",function(snapshot) {
 		// Append the table row to the table body
 		tBody.append(tRow);
 
-		// $("#train-table > tbody").append(
-		// 	"<tr><td>" +
-		// 		trainName +
-		// 		"</td><td>" +
-		// 		destination +
-		// 		"</td><td>" +
-		// 		firstTrainTime +
-		// 		"</td><td>" +
-		// 		frequency +
-		// 		"</td></tr>"
-		//);
+		 $("#train-table > tbody").append(
+		"<tr><td>" +
+		 		trainName +
+		 		"</td><td>" +
+		 		destination +
+		 		"</td><td>" +
+		 		firstTrainTime +
+		 		"</td><td>" +
+		 		frequency +
+		 		"</td></tr>"
+		);
 	},
 	function(errorObject) {
 		console.log("Errors handled: " + errorObject.code);
