@@ -27,6 +27,7 @@ var frequency;
 
 // var nextArrival;
 // var minutesAway;
+
 $("#submit").on("click", function() {
 	event.preventDefault();
 
@@ -54,11 +55,7 @@ $("#submit").on("click", function() {
 
 database.ref().on("child_added",function(snapshot) {
 		var snap = snapshot.val();
-		console.log(snap.trainName);
-		console.log(snap.destination);
-		console.log(firstTrainTime);
-		console.log(snap.frequency);
-		
+	
 
 		$("#trainName-input").text(snap.trainName);
 		$("#destination-input").text(snap.destination);
@@ -69,22 +66,20 @@ database.ref().on("child_added",function(snapshot) {
         //CONVERTS AND CALCULATES TIME FIRST ARRIVAL...
         //...AND MINUTES AWAY
         var timeConverted = moment(firstTrainTime, "HH:mm");
-        console.log("TIME CONVERTED: " + timeConverted);
 
         var currentTime = moment();
-        console.log("CURRENT TIME: " + moment(currentTime).format("HH:mm"));
+        
 
         var timeDifference = moment().diff(moment(timeConverted), "minutes");
-        console.log("DIFFERENCE IN TIME: " + timeDifference);
+        
 
         var remainder = timeDifference % frequency;
-        console.log("REMAINDER: " + remainder);
+        
 
         var minutesPast = (frequency - remainder);
-        console.log("MINUTES UNTILL NEXT TRAIN: " + minutesPast);
 
         var nextTrain = moment().add(minutesPast, "minutes");
-        console.log("ARRIVAL TIME: " + moment(nextTrain).format("HH:mm"));
+     
 
 		var tBody = $("#dataTable");
 		var tRow = $("<tr>");
@@ -107,6 +102,12 @@ database.ref().on("child_added",function(snapshot) {
 		 		firstTrainTime +
 		 		"</td><td>" +
 		 		frequency +
+		 		"</td></tr>" +
+		 		currentTime +
+		 		"</td></tr>" +
+		 		minutesPast +
+		 		"</td></tr>" +
+		 		nextTrain +
 		 		"</td></tr>"
 		);
 	},
@@ -114,3 +115,5 @@ database.ref().on("child_added",function(snapshot) {
 		console.log("Errors handled: " + errorObject.code);
 	}
 );
+
+debugger;
