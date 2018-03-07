@@ -44,9 +44,9 @@
         <div class="col-lg-12">
 
         <!-- Current Employees-->
-          <div class="panel panel-primary">
+          <div class="panel panel-primary" >
             <div class="panel-heading">
-              <h3 class="panel-title"><strong>Current Train Schedule</strong></h3>
+              <h3 class="panel-title" ><strong>Current Train Schedule</strong></h3>
             </div>
             <div class="panel-body">
               <table class="table table-hover" id='train-table'>
@@ -71,24 +71,41 @@
             </div>
             <div class="panel-body">
 
-              <!-- Entry Form -->
-              <form>
+              <!-- HTML form for handling inputs -->
+              <form role="form" id="trainSchedule">
+
+
+                 <!--  Train Name Input -->
+
                 <div class="form-group">
-                  <label for="train-name-input">Train Name</label>
+                  <label for="trainname">Train Name</label>
                   <input class="form-control" id="trainName-input" type="text">
                 </div>
+
+                
+                <!-- Destination Input -->
+
                 <div class="form-group">
-                  <label for="destination-input">Destination</label>
+                  <label for="destination">Destination</label>
                   <input class="form-control" id="destination-input" type="text">
                 </div>
+
+                 <!-- First Train Time Input -->
+
                 <div class="form-group">
-                  <label for="firstTrainTime-input">First Train Time (military time)</label>
+                  <label for="firstTrainTime">First Train Time (military time)</label>
                   <input class="form-control" id="firstTrainTime-input" type="number">
                 </div>
+
+                 <!-- Frequency Input -->
+
                 <div class="form-group">
-                  <label for="frequency-input">Frequency (in Minutes)</label>
+                  <label for="frequency">Frequency (in Minutes)</label>
                   <input class="form-control" id="frequency-input" type="text">
                 </div>
+
+                 <!-- Submit Button -->
+
                 <button class="btn btn-primary" value="send" id="submit" type="submit">Submit</button>
               </form>
 
@@ -116,6 +133,8 @@
 <script src="./assets/javascript/Moment.js" type="text/javascript"></script>
 
  <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+
+ <script src="./assets/javascript/Moment.js" type="text/javascript"></script>
 
 </body>
 </html>

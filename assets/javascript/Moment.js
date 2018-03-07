@@ -24,7 +24,7 @@ var trainName = "";
 var destination = "";
 var firstTrainTime;
 var frequency;
-var TIMESTAMP;
+
 // var nextArrival;
 // var minutesAway;
 $("#submit").on("click", function() {
@@ -75,25 +75,25 @@ database.ref().on(
 		var tRow = $("<tr>");
 		var nameTd = $("<td>").text(snap.trainName);
 		var destinationTd = $("<td>").text(snap.destination);
-		var trainTimeTd = $("<td>").text(snap.firstTrainTime);
+		var firstTrainTimeTd = $("<td>").text(snap.firstTrainTime);
 		var frequencyTd = $("<td>").text(snap.frequency);
 
 		// Append the newly created table data to the table row
-		tRow.append(trainNameTd, destinationTd, firstTrainTimeTd, frequencyTd);
+		tRow.append(nameTd, destinationTd, firstTrainTimeTd, frequencyTd);
 		// Append the table row to the table body
 		tBody.append(tRow);
 
-		$("#train-table > tbody").append(
-			"<tr><td>" +
-				trainName +
-				"</td><td>" +
-				destination +
-				"</td><td>" +
-				firstTrainTime +
-				"</td><td>" +
-				frequency +
-				"</td></tr>"
-		);
+		// $("#train-table > tbody").append(
+		// 	"<tr><td>" +
+		// 		trainName +
+		// 		"</td><td>" +
+		// 		destination +
+		// 		"</td><td>" +
+		// 		firstTrainTime +
+		// 		"</td><td>" +
+		// 		frequency +
+		// 		"</td></tr>"
+		//);
 	},
 	function(errorObject) {
 		console.log("Errors handled: " + errorObject.code);
