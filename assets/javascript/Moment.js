@@ -75,13 +75,13 @@ database.ref().on("child_added",function(snapshot) {
         console.log("CURRENT TIME: " + moment(currentTime).format("HH:mm"));
 
         var timeDifference = moment().diff(moment(timeConverted), "minutes");
-        console.log("DIFFERENCE IN TIME: " + diffTime);
+        console.log("DIFFERENCE IN TIME: " + timeDifference);
 
         var remainder = timeDifference % frequency;
         console.log("REMAINDER: " + remainder);
 
         var minutesPast = (frequency - remainder);
-        console.log("MINUTES UNTILL NEXT TRAIN: " + minutesTillTrain);
+        console.log("MINUTES UNTILL NEXT TRAIN: " + minutesPast);
 
         var nextTrain = moment().add(minutesPast, "minutes");
         console.log("ARRIVAL TIME: " + moment(nextTrain).format("HH:mm"));
